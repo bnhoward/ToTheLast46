@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class Gig : IGig
+    public class Gig
     {
         int gigID;
         string description;
@@ -20,7 +20,7 @@ namespace Nightjar.ToTheLast.Entities
             this.startDateTime = startDateTime;
         }
 
-        #region IGig Members
+        #region Gig Members
 
 
         public int GigID

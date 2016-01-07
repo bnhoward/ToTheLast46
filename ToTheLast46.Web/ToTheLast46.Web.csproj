@@ -167,6 +167,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin666\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin666\Controllers\ContentController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\FriendsController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\GalleryController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\GigsController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\GuestbookController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -180,6 +188,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\contact.aspx.htm" />
+    <Content Include="App_Data\david.htm" />
+    <Content Include="App_Data\default.aspx.htm" />
+    <Content Include="App_Data\rick.htm" />
+    <Content Include="App_Data\stewart.htm" />
+    <Content Include="App_Data\tom.htm" />
     <Content Include="App_Data\ttl-data.mdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -189,6 +203,18 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin666\Views\web.config" />
+    <Content Include="Areas\Admin666\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin666\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin666\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Content\Homepage.cshtml" />
+    <Content Include="Areas\Admin666\Views\Profiles\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gigs\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Guestbook\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gallery\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Friends\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\barryhoward - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -235,8 +261,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Band.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Gigs.cshtml" />
+    <Content Include="Views\Home\Guestbook.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Friends.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ToTheLast.Model\ToTheLast.Model.csproj">
+      <Project>{6792f2c8-1bb7-4591-83d2-3c3be4c52c41}</Project>
+      <Name>ToTheLast.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToTheLast.Repositories\ToTheLast.Repositories.csproj">
+      <Project>{1d0b8368-95a4-46a2-a813-d5403644a8af}</Project>
+      <Name>ToTheLast.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -244,6 +285,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin666\Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

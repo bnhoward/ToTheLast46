@@ -7,7 +7,7 @@ namespace Nightjar.ToTheLast.Entities
 {
 
 
-    public class Link : ILink
+    public class Link 
     {
         int linkID;
         string uRL;
@@ -24,7 +24,7 @@ namespace Nightjar.ToTheLast.Entities
             this.sortOrder = sortOrder;
         }
 
-        #region ILink Members
+        #region Link Members
 
 
         public int LinkID

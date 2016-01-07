@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class Profile : IProfile
+    public class Profile
     {
         int profileID;
         string name;
@@ -22,7 +22,7 @@ namespace Nightjar.ToTheLast.Entities
             this.sortOrder = sortOrder;
         }
 
-        #region IProfile Members
+        #region Profile Members
 
 
         public int ProfileID

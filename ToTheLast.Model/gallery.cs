@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class Gallery:IGallery
+    public class Gallery
     {
         int galleryID,sortOrder;
         string name, description,displayImage;
@@ -18,7 +18,7 @@ namespace Nightjar.ToTheLast.Entities
             this.displayImage = displayImage;
         }
 
-        #region IGallery Members
+        #region Gallery Members
 
         public int GalleryID
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class Guestbook : IGuestbook
+    public class Guestbook 
     {
         int guestbookID;
         string name;
@@ -26,7 +26,7 @@ namespace Nightjar.ToTheLast.Entities
             this.dateCreated = dateCreated;
         }
 
-        #region IGuestbook Members
+        #region Guestbook Members
 
 
         public int GuestbookID

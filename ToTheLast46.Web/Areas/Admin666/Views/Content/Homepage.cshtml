@@ -1,0 +1,25 @@
+﻿@model string
+@{
+    ViewBag.Title = "Homepage";
+}
+
+@section scripts
+{
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+}
+
+<h2>Homepage</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Content Saved!</strong>
+    </div>
+}
+<form method="post">
+    <div style="margin:1em 0;">
+        <textarea name="content">@ViewBag.Content</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary pull-right">Save</button>
+</form>

@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -45,7 +46,6 @@
     <Compile Include="gig.cs" />
     <Compile Include="guestbook.cs" />
     <Compile Include="image.cs" />
-    <Compile Include="interface.cs" />
     <Compile Include="link.cs" />
     <Compile Include="news.cs" />
     <Compile Include="profile.cs" />

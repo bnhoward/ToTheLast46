@@ -1,0 +1,24 @@
+﻿@model IList<Nightjar.ToTheLast.Entities.Profile>
+@{
+    ViewBag.Title = "The Band";
+}
+
+<h2>The Band</h2>
+
+@foreach (var item in Model)
+{
+    <h3>@item.Name</h3><a name="@item.Name.ToString().Replace(" ","-")"></a>
+    @Html.Raw(item.ProfileText)
+}
+
+@*<asp:DataList ID="dlProfiles" runat="server">
+    <ItemTemplate>
+
+        <h2><%# Eval("Name") %></h2><a name='<%# Eval("Name").ToString().Replace(' ',' -') %>'></a>
+        <div class="member">
+            <asp:Image runat="server" style="float:left;margin:5px 15px 5px 0" Visible='<%# Convert.ToBoolean(Eval("ImageExists"))  %>' ImageUrl='<%# "getImage.aspx?file="+Eval("ImageName")+"&size=profile" %>' />
+            <%# Eval("ProfileText") %>
+        </div>
+    </ItemTemplate>
+</asp:DataList>*@
+

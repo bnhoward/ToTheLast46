@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class Image : IImage
+    public class Image
     {
         int imageID;
         string filename;
@@ -20,7 +20,7 @@ namespace Nightjar.ToTheLast.Entities
             this.galleryID = galleryID;
         }
 
-        #region IImage Members
+        #region Image Members
 
 
         public int ImageID

@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region ILinkDAC Members
 
-        public IList<ILink> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
+        public IList<Link> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
         {
-            IList<ILink> links = new List<ILink>();
+            IList<Link> links = new List<Link>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -26,9 +26,9 @@ namespace Nightjar.ToTheLast.DAL
             return links;
         }
 
-        public ILink Get(int linkID)
+        public Link Get(int linkID)
         {
-            IList<ILink> links;
+            IList<Link> links;
             int total;
             string where = string.Format("LinkID={0}", linkID.ToString());
             links = Get(where, null, 0, 1, out total);
@@ -65,7 +65,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillLinkCollection(IDataReader reader, IList<ILink> links, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillLinkCollection(IDataReader reader, IList<Link> links, int startIndex, int noRecords, out int totalNoRecords)
         {
             int linkID;
             string url;

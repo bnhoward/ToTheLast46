@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region INewsDAC Members
 
-        public IList<INews> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
+        public IList<News> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
         {
-            IList<INews> news = new List<INews>();
+            IList<News> news = new List<News>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -53,7 +53,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillNewsCollection(IDataReader reader, IList<INews> newss, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillNewsCollection(IDataReader reader, IList<News> newss, int startIndex, int noRecords, out int totalNoRecords)
         {
             int newsID;
             string subject;

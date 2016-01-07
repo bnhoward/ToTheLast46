@@ -11,7 +11,7 @@ namespace Nightjar.ToTheLast.Utility
     {
         public static string ConnectionString
         {
-            get { return ConfigurationManager.AppSettings["connString"]; }
+            get { return ConfigurationManager.ConnectionStrings["SiteData"].ConnectionString; }
         }
     }
 }

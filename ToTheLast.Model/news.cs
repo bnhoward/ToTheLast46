@@ -1,11 +1,13 @@
 // This file was generated from the TTL database at 16/10/2007 16:27:47.
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
-    public class News : INews
+    public class News
     {
         int newsID;
         string subject;
@@ -20,7 +22,7 @@ namespace Nightjar.ToTheLast.Entities
             this.dateCreated = dateCreated;
         }
 
-        #region INews Members
+        #region News Members
 
 
         public int NewsID
@@ -33,11 +35,14 @@ namespace Nightjar.ToTheLast.Entities
             get { return subject; }
         }
 
+        [DisplayName("Text")]
         public string NewsText
         {
             get { return newsText; }
         }
 
+        [DisplayName("Date Created")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateCreated
         {
             get { return dateCreated; }

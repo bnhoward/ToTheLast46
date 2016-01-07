@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region IProfileDAC Members
 
-        public IList<IProfile> GetAll()
+        public IList<Profile> GetAll()
         {
-            IList<IProfile> galleries = new List<IProfile>();
+            IList<Profile> galleries = new List<Profile>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -27,9 +27,9 @@ namespace Nightjar.ToTheLast.DAL
             return galleries;
         }
 
-        public IProfile GetProfile(int profileID)
+        public Profile GetProfile(int profileID)
         {
-            IList<IProfile> galleries = new List<IProfile>();
+            IList<Profile> galleries = new List<Profile>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -72,7 +72,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillProfileCollection(IDataReader reader, IList<IProfile> profiles, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillProfileCollection(IDataReader reader, IList<Profile> profiles, int startIndex, int noRecords, out int totalNoRecords)
         {
             int profileID;
             string name;

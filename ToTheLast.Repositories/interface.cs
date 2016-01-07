@@ -7,8 +7,8 @@ namespace Nightjar.ToTheLast.DAL
 {
     public interface IGigDAC
     {
-        IList<IGig> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
-        IGig Get(int gigID);
+        IList<Gig> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
+        Gig Get(int gigID);
         int Add(string description, string venue, DateTime startDateTime);
         bool Update(int gigID, string description, string venue, DateTime startDateTime);
         bool Delete(int gigID);
@@ -16,8 +16,8 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface IGuestbookDAC
     {
-        IList<IGuestbook> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
-        IGuestbook Get(int guestbookID);
+        IList<Guestbook> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
+        Guestbook Get(int guestbookID);
         int Add(string name, string email, string comment);
         //bool Update(int guestbookID, string name, string email, string comment, string reply, DateTime dateCreated);
         bool Update(int guestbookID,string reply);
@@ -27,7 +27,7 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface INewsDAC
     {
-        IList<INews> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
+        IList<News> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
         int Add(string subject,string newsText);
         bool Update(int newsID,string subject, string newsText);
         bool Delete(int newsID);
@@ -35,8 +35,8 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface IImageDAC
     {
-        IList<IImage> Get(int galleryID);
-        IImage GetImage(int imageID);
+        IList<Image> Get(int galleryID);
+        Image GetImage(int imageID);
         void Add(string filename, string title, int galleryID,int sortOrder);
         bool Update(int imageID,  string title, int sortOrder);
         bool Delete(int imageID);
@@ -44,8 +44,8 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface IGalleryDAC
     {
-        IList<IGallery> Get();
-        IGallery GetGallery(int galleryID);
+        IList<Gallery> Get();
+        Gallery GetGallery(int galleryID);
         void Add(string name, string description,int sortOrder);
         bool Update(int galleryID, string name, string description, int sortOrder, string displayImage);
         bool Delete(int galleryID);
@@ -53,8 +53,8 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface ILinkDAC
     {
-        IList<ILink> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
-        ILink Get(int linkID);
+        IList<Link> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
+        Link Get(int linkID);
         int Add(string url,string title,string note,int sortOrder);
         bool Update(int linkID, string url, string title, string note, int sortOrder);
         bool Delete(int linkID);
@@ -62,8 +62,8 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface IProfileDAC
     {
-        IList<IProfile> GetAll();
-        IProfile GetProfile(int profileID);
+        IList<Profile> GetAll();
+        Profile GetProfile(int profileID);
         int Add(string name, string profileText,int sortOrder);
         bool Update(int profileID,string name, string profileText, int sortOrder);
         bool Delete(int profileID);

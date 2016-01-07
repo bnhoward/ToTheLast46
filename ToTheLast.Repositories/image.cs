@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region IImageDAC Members
 
-        public IList<IImage> Get(int galleryID)
+        public IList<Image> Get(int galleryID)
         {
-            IList<IImage> images=new List<IImage>();
+            IList<Image> images=new List<Image>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -27,9 +27,9 @@ namespace Nightjar.ToTheLast.DAL
             return images;
         }
 
-        public IImage GetImage(int imageID)
+        public Image GetImage(int imageID)
         {
-            IList<IImage> images = new List<IImage>();
+            IList<Image> images = new List<Image>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -72,7 +72,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillImageCollection(IDataReader reader, IList<IImage> images, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillImageCollection(IDataReader reader, IList<Image> images, int startIndex, int noRecords, out int totalNoRecords)
         {
             int imageID;
             string filename;

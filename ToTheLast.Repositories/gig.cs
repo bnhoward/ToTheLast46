@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region IGigDAC Members
 
-        public IList<IGig> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
+        public IList<Gig> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
         {
-            IList<IGig> gigs = new List<IGig>();
+            IList<Gig> gigs = new List<Gig>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -26,9 +26,9 @@ namespace Nightjar.ToTheLast.DAL
             return gigs;
         }
 
-        public IGig Get(int gigID)
+        public Gig Get(int gigID)
         {
-            IList<IGig> gigs;
+            IList<Gig> gigs;
             int total;
             string where = string.Format("GigID={0}", gigID.ToString());
             gigs=Get(where, null, 0, 1, out total);
@@ -67,7 +67,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillGigCollection(IDataReader reader, IList<IGig> gigs, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillGigCollection(IDataReader reader, IList<Gig> gigs, int startIndex, int noRecords, out int totalNoRecords)
         {
             int gigID;
             string description;

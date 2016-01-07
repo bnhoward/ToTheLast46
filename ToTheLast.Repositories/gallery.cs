@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region IGalleryDAC Members
 
-        public IList<IGallery> Get()
+        public IList<Gallery> Get()
         {
-            IList<IGallery> galleries = new List<IGallery>();
+            IList<Gallery> galleries = new List<Gallery>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -27,9 +27,9 @@ namespace Nightjar.ToTheLast.DAL
             return galleries;
         }
 
-        public IGallery GetGallery(int galleryID)
+        public Gallery GetGallery(int galleryID)
         {
-            IList<IGallery> galleries = new List<IGallery>();
+            IList<Gallery> galleries = new List<Gallery>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -72,7 +72,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillGalleryCollection(IDataReader reader, IList<IGallery> galleries, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillGalleryCollection(IDataReader reader, IList<Gallery> galleries, int startIndex, int noRecords, out int totalNoRecords)
         {
             int galleryID;
             string name;

@@ -11,9 +11,9 @@ namespace Nightjar.ToTheLast.DAL
     {
         #region IGuestbookDAC Members
 
-        public IList<IGuestbook> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
+        public IList<Guestbook> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
         {
-            IList<IGuestbook> guestbookEntries = new List<IGuestbook>();
+            IList<Guestbook> guestbookEntries = new List<Guestbook>();
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -26,10 +26,10 @@ namespace Nightjar.ToTheLast.DAL
             return guestbookEntries;
         }
 
-        public IGuestbook Get(int guestbookID)
+        public Guestbook Get(int guestbookID)
         {
             int total;
-            IList<IGuestbook> guestbookEntries = new List<IGuestbook>();
+            IList<Guestbook> guestbookEntries = new List<Guestbook>();
 
             guestbookEntries = Get("GuestbookID=" + guestbookID.ToString(), null, 0, 1, out total);
 
@@ -49,7 +49,7 @@ namespace Nightjar.ToTheLast.DAL
 
         public bool Update(int guestbookID, string reply)
         {
-            IGuestbook guestbook=Get(guestbookID);
+            Guestbook guestbook=Get(guestbookID);
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -59,7 +59,7 @@ namespace Nightjar.ToTheLast.DAL
 
         public bool Update(int guestbookID, bool display)
         {
-            IGuestbook guestbook = Get(guestbookID);
+            Guestbook guestbook = Get(guestbookID);
 
             using (SprocWrapper db = new SprocWrapper())
             {
@@ -77,7 +77,7 @@ namespace Nightjar.ToTheLast.DAL
 
         #endregion
 
-        public void FillGuestbookCollection(IDataReader reader, IList<IGuestbook> guestbooks, int startIndex, int noRecords, out int totalNoRecords)
+        public void FillGuestbookCollection(IDataReader reader, IList<Guestbook> guestbooks, int startIndex, int noRecords, out int totalNoRecords)
         {
             int guestbookID;
             string name;
