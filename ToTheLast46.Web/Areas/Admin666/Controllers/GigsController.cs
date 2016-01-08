@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using ToTheLast46.Web.Areas.Admin666.Models;
 
-namespace ToTheLast46.Web.Areas.Admin.Controllers
+namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
     public class GigsController : Controller
     {

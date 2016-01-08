@@ -173,8 +173,14 @@
     <Compile Include="Areas\Admin666\Controllers\GalleryController.cs" />
     <Compile Include="Areas\Admin666\Controllers\GigsController.cs" />
     <Compile Include="Areas\Admin666\Controllers\GuestbookController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\ImageController.cs" />
     <Compile Include="Areas\Admin666\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin666\Controllers\ProfilesController.cs" />
+    <Compile Include="Areas\Admin666\Controllers\TestController.cs" />
+    <Compile Include="Areas\Admin666\Models\ImageEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\ImageCreate.cs" />
+    <Compile Include="Areas\Admin666\Models\GalleryEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\GalleryCreate.cs" />
     <Compile Include="Areas\Admin666\Models\GigCreate.cs" />
     <Compile Include="Areas\Admin666\Models\GuestbookEdit.cs" />
     <Compile Include="Areas\Admin666\Models\LinkCreate.cs" />
@@ -245,6 +251,11 @@
     <Content Include="Areas\Admin666\Views\Guestbook\Edit.cshtml" />
     <Content Include="Areas\Admin666\Views\Friends\Create.cshtml" />
     <Content Include="Areas\Admin666\Views\Friends\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gallery\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gallery\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\Image\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Image\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\Image\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\barryhoward - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -317,7 +328,11 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Admin666\Views\Images2\" />
+    <Folder Include="Areas\Admin666\Views\Test\" />
+    <Folder Include="SiteContent\Images\Gallery\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

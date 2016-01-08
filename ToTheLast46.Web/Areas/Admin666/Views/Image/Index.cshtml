@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Nightjar.ToTheLast.Entities.Image>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Images for the @ViewBag.Gallery</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create", new { galleryID = ViewBag.GalleryID })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img style="height:100px;" src="~/SiteContent/Images/Gallery/@item.Filename" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ImageID }) |
+                <form method="post" action="@Url.Action("Delete")" style="display:inline;">
+                    <input type="hidden" value="@item.ImageID" name="id" />
+                    <input type="hidden" value="@item.GalleryID" name="galleryID" />
+                    <a href="#" class="delete-btn">Delete</a>
+                </form>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(".delete-btn").click(function (e) {
+                var frm = $(this).closest("form");
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        frm.submit();
+                    }
+                });
+            });
+        });
+    </script>
+}

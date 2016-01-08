@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
 {
     public class Gallery
     {
-        int galleryID,sortOrder;
-        string name, description,displayImage;
+        int galleryID, sortOrder;
+        string name, description, displayImage;
 
-        public Gallery(int galleryID, string name, string description, int sortOrder,string displayImage)
+        public Gallery(int galleryID, string name, string description, int sortOrder, string displayImage)
         {
             this.galleryID = galleryID;
             this.name = name;
@@ -34,12 +35,12 @@ namespace Nightjar.ToTheLast.Entities
         {
             get { return description; }
         }
-
+        [DisplayName("Order")]
         public int SortOrder
         {
             get { return sortOrder; }
         }
-
+        [DisplayName("Main Image")]
         public string DisplayImage
         {
             get { return displayImage; }

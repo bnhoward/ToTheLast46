@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ToTheLast46.Web.Areas.Admin.Controllers
+namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
     public class ContentController : Controller
     {

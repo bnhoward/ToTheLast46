@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace ToTheLast46.Web.Areas.Admin
+namespace ToTheLast46.Web.Areas.Admin666
 {
     public class Admin666AreaRegistration : AreaRegistration
     {

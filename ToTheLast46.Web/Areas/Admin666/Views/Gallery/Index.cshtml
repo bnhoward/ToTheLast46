@@ -26,25 +26,51 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SortOrder)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayImage)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GalleryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GalleryID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SortOrder)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.DisplayImage))
+                {
+                    <img style="height:100px;" src="~/SiteContent/Images/Gallery/@item.DisplayImage" />
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GalleryID }) |
+                <form method="post" action="@Url.Action("Delete")" style="display:inline;">
+                    <input type="hidden" value="@item.GalleryID" name="id" />
+                    <a href="#" class="delete-btn">Delete</a>
+                </form> |
+                @Html.ActionLink("Images", "Index", "Image", new { galleryID = item.GalleryID }, null)
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(".delete-btn").click(function (e) {
+                var frm = $(this).closest("form");
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        frm.submit();
+                    }
+                });
+            });
+        });
+    </script>
+}
