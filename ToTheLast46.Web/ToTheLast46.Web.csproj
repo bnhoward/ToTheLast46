@@ -175,6 +175,15 @@
     <Compile Include="Areas\Admin666\Controllers\GuestbookController.cs" />
     <Compile Include="Areas\Admin666\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin666\Controllers\ProfilesController.cs" />
+    <Compile Include="Areas\Admin666\Models\GigCreate.cs" />
+    <Compile Include="Areas\Admin666\Models\GuestbookEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\LinkCreate.cs" />
+    <Compile Include="Areas\Admin666\Models\NewsCreate.cs" />
+    <Compile Include="Areas\Admin666\Models\GigEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\LinkEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\NewsEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\ProfileEdit.cs" />
+    <Compile Include="Areas\Admin666\Models\ProfileCreate.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -191,6 +200,19 @@
     <Content Include="App_Data\contact.aspx.htm" />
     <Content Include="App_Data\david.htm" />
     <Content Include="App_Data\default.aspx.htm" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="SiteContent\Images\Band\profile_10.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_11.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_12.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_13.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_14.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_15.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_16.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_2.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_3.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_4.jpg" />
+    <Content Include="SiteContent\Images\Band\profile_9.jpg" />
     <Content Include="App_Data\rick.htm" />
     <Content Include="App_Data\stewart.htm" />
     <Content Include="App_Data\tom.htm" />
@@ -214,6 +236,15 @@
     <Content Include="Areas\Admin666\Views\Guestbook\Index.cshtml" />
     <Content Include="Areas\Admin666\Views\Gallery\Index.cshtml" />
     <Content Include="Areas\Admin666\Views\Friends\Index.cshtml" />
+    <Content Include="Areas\Admin666\Views\Profiles\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\Profiles\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gigs\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\Gigs\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\Guestbook\Edit.cshtml" />
+    <Content Include="Areas\Admin666\Views\Friends\Create.cshtml" />
+    <Content Include="Areas\Admin666\Views\Friends\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\barryhoward - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -286,9 +317,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Admin666\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

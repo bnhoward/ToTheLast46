@@ -27,6 +27,7 @@ namespace Nightjar.ToTheLast.DAL
 
     public interface INewsDAC
     {
+        News Get(int newsID);
         IList<News> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords);
         int Add(string subject,string newsText);
         bool Update(int newsID,string subject, string newsText);

@@ -1,6 +1,7 @@
 // This file was generated from the TTL database at 16/10/2007 16:27:11.
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Nightjar.ToTheLast.Entities
@@ -59,6 +60,7 @@ namespace Nightjar.ToTheLast.Entities
             get{return display;}
         }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateCreated
         {
             get { return dateCreated; }

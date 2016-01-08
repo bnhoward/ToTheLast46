@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Nightjar.ToTheLast.Entities.Guestbook>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Guestbook";
 }
 
-<h2>Index</h2>
+<h2>Guestbook</h2>
 
 
 <table class="table">
@@ -25,7 +25,7 @@
             @Html.DisplayNameFor(model => model.Display)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateCreated)
+            Date Created
         </th>
         <th></th>
     </tr>
@@ -36,7 +36,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            <a href="mailto:@item.Email">@item.Email</a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Comment)
@@ -45,16 +45,37 @@
             @Html.DisplayFor(modelItem => item.Reply)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Display)
+            @(item.Display?"Yes":"No")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateCreated)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GuestbookID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GuestbookID })
+                <form method="post" action="@Url.Action("Delete")" style="display:inline;">
+                    <input type="hidden" value="@item.GuestbookID" name="id" />
+                    <a href="#" class="delete-btn">Delete</a>
+                </form>
         </td>
     </tr>
 }
 
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(".delete-btn").click(function (e) {
+                var frm = $(this).closest("form");
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        frm.submit();
+                    }
+                });
+            });
+        });
+    </script>
+}

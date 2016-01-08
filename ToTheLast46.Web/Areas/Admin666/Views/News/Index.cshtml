@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Nightjar.ToTheLast.Entities.News>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "News";
 }
 
-<h2>Blog</h2>
+<h2>News</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,22 +23,44 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsText)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.NewsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.NewsID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.Raw(item.NewsText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.NewsID }) |
+                <form method="post" action="@Url.Action("Delete")" style="display:inline;">
+                    <input type="hidden" value="@item.NewsID" name="id" />
+                    <a href="#" class="delete-btn">Delete</a>
+                </form>
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(".delete-btn").click(function (e) {
+                var frm = $(this).closest("form");
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        frm.submit();
+                    }
+                });
+            });
+        });
+    </script>
+}

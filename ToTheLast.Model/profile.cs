@@ -47,16 +47,17 @@ namespace Nightjar.ToTheLast.Entities
 
         public string ImageName
         {
-            get { return "profile_"+profileID.ToString()+".jpg"; }
+            get { return "profile_" + profileID.ToString() + ".jpg"; }
         }
 
         public bool ImageExists
         {
-            get {
-                if (File.Exists(HttpContext.Current.Server.MapPath("~/images/" + ImageName)))
+            get
+            {
+                if (File.Exists(HttpContext.Current.Server.MapPath("~/SiteContent/Images/Band/" + ImageName)))
                     return true;
                 else
-                    return false;           
+                    return false;
             }
         }
 

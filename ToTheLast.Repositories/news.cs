@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Linq;
 using Nightjar.ToTheLast.DAL.Access;
 using Nightjar.ToTheLast.Entities;
 
@@ -10,6 +11,12 @@ namespace Nightjar.ToTheLast.DAL
     public class NewsDAC:INewsDAC
     {
         #region INewsDAC Members
+
+        public News Get(int newsID)
+        {
+            int totalNoRecords;
+            return Get($"NewsID={newsID}", null, 0, 1, out totalNoRecords).Single();
+        }
 
         public IList<News> Get(string where, string orderBy, int startIndex, int noRecords, out int totalNoRecords)
         {

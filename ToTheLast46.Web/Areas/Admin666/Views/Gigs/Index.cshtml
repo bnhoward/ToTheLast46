@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Nightjar.ToTheLast.Entities.Gig>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Gigs";
 }
 
-<h2>Index</h2>
+<h2>Gigs</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -36,9 +36,30 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GigID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GigID })
+                <form method="post" action="@Url.Action("Delete")" style="display:inline;">
+                    <input type="hidden" value="@item.GigID" name="id" />
+                    <a href="#" class="delete-btn">Delete</a>
+                </form>
         </td>
     </tr>
 }
 
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(".delete-btn").click(function (e) {
+                var frm = $(this).closest("form");
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        frm.submit();
+                    }
+                });
+            });
+        });
+    </script>
+}
