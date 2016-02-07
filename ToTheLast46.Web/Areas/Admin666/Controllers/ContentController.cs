@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
+    [Authorize]
     public class ContentController : Controller
     {
         public ActionResult Index()

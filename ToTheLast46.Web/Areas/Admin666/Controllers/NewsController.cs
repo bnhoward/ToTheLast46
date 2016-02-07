@@ -8,6 +8,7 @@ using ToTheLast46.Web.Areas.Admin666.Models;
 
 namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
+    [Authorize]
     public class NewsController : Controller
     {
         // GET: Admin/News

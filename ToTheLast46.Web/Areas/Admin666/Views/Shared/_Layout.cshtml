@@ -30,6 +30,17 @@
                     <li>@Html.ActionLink("Gallery", "Index", "Gallery", new { area = "Admin666" }, null)</li>
                     <li>@Html.ActionLink("Friends", "Index", "Friends", new { area = "Admin666" }, null)</li>
                 </ul>
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                        </ul>
+                    }
+                }
             </div>
         </div>
     </div>

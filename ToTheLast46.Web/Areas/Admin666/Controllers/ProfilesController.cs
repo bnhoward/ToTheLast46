@@ -10,6 +10,7 @@ using ToTheLast46.Web.Areas.Admin666.Models;
 
 namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
+    [Authorize]
     public class ProfilesController : Controller
     {
         // GET: Admin/Profiles
