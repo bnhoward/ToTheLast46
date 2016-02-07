@@ -4,7 +4,7 @@
 }
 
 <h2>The Band</h2>
-@{var imageFloat = "right"; }
+@{var imageFloat = "right"; var rnd = new Random((int)DateTime.Now.Ticks); }
 @foreach (var item in Model)
 {
     <div class="band-member" style="padding-bottom:1em;">
@@ -12,7 +12,8 @@
         <div>
             @if (item.ImageExists)
             {
-                <img src="/sitecontent/images/band/@item.ImageName" style="float:@imageFloat;max-height:300px;margin:0 15px;box-shadow: 1px 1px 7px #000;" />
+                var degree = string.Format("{0}deg", (rnd.Next(-3, 3)));
+                <img src="/sitecontent/images/band/@item.ImageName" style="float:@imageFloat;max-height:300px;margin:0 15px;box-shadow: 1px 1px 15px #000;transform: rotateZ(@degree);" />
             }
             @Html.Raw(item.ProfileText)
         </div>
