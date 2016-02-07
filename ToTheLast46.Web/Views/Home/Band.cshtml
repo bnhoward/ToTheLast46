@@ -4,21 +4,21 @@
 }
 
 <h2>The Band</h2>
-
+@{var imageFloat = "right"; }
 @foreach (var item in Model)
 {
-    <h3>@item.Name</h3><a name="@item.Name.ToString().Replace(" ","-")"></a>
-    @Html.Raw(item.ProfileText)
+    <div class="band-member" style="padding-bottom:1em;">
+        <h3>@item.Name</h3><a name="@item.Name.ToString().Replace(" ","-")"></a>
+        <div>
+            @if (item.ImageExists)
+            {
+                <img src="/sitecontent/images/band/@item.ImageName" style="float:@imageFloat;max-height:300px;margin:0 15px;box-shadow: 1px 1px 7px #000;" />
+            }
+            @Html.Raw(item.ProfileText)
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    imageFloat = imageFloat == "right" ? "left" : "right";
 }
 
-@*<asp:DataList ID="dlProfiles" runat="server">
-    <ItemTemplate>
-
-        <h2><%# Eval("Name") %></h2><a name='<%# Eval("Name").ToString().Replace(' ',' -') %>'></a>
-        <div class="member">
-            <asp:Image runat="server" style="float:left;margin:5px 15px 5px 0" Visible='<%# Convert.ToBoolean(Eval("ImageExists"))  %>' ImageUrl='<%# "getImage.aspx?file="+Eval("ImageName")+"&size=profile" %>' />
-            <%# Eval("ProfileText") %>
-        </div>
-    </ItemTemplate>
-</asp:DataList>*@
 

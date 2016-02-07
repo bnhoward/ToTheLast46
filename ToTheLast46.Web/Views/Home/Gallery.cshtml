@@ -7,37 +7,23 @@
 <h2>Gallery</h2>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SortOrder)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayImage)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SortOrder)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayImage)
-        </td>
-    </tr>
-}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (!string.IsNullOrEmpty(item.DisplayImage))
+                {
+                    <a href="@Url.Action("GalleryImages", new {id=item.GalleryID })"><img src="/sitecontent/images/gallery/@item.DisplayImage" style="box-shadow: 1px 1px 7px #000;max-height:200px;" /></a>
+                }
+            </td>
+            <td>
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <p><em>@Html.DisplayFor(modelItem => item.Description)</em></p>
+                <p><a href="@Url.Action("GalleryImages", new {id=item.GalleryID })">View all images</a></p>
+            </td>
+        </tr>
+    }
 
 </table>

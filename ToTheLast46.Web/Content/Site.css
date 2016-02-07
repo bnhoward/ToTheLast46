@@ -1,9 +1,10 @@
-﻿body { padding-top: 290px; padding-bottom: 20px; background-image: url('Images/Old Paper.jpg'); }
+﻿body { padding-top: 50px; padding-bottom: 20px; background-image: url('Images/Old Paper.jpg'); }
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { /*font-family: 'Metamorphous', cursive;*/ font-family: 'Frijole', cursive; /*font-family: 'Gentium Book Basic', serif;    
        font-size:200%;*/ }
 /* Set padding to keep content from hitting the edges */
 .body-content { padding-left: 15px; padding-right: 15px; }
-a{color:crimson;}
+a, a:hover { color: crimson; }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -16,17 +17,28 @@ select,
 textarea { max-width: 280px; }
 
 @media (min-width: 768px) {
+    body { padding-top: 290px; }
     .navbar-inverse { background-color: #000; }
     .navbar { background-image: url('Images/burnt-edge.png'); background-repeat: repeat-x; background-position: bottom; border: none; }
     .navbar-header { float: none; height: 210px; }
     .navbar > .container .navbar-brand { float: none; display: block; width: 635px; height: 205px; background-image: url('Images/to-the-last.gif'); text-indent: -9999px; margin: 0 auto; }
     .navbar-nav { width: 100%; margin-bottom: 10px; }
         .navbar-nav > li { width: 16.66%; }
-            .navbar-nav > li > a { width: 100%; display: block; height: 63px; text-indent: -9999px; background-repeat: no-repeat; }
-            .navbar-nav > li:nth-child(1) > a { background-image: url('Images/band.gif'); }
-            .navbar-nav > li:nth-child(2) > a { background-image: url('Images/news.gif'); background-position: 35px 10px; }
-            .navbar-nav > li:nth-child(3) > a { background-image: url('Images/gigs.gif'); }
-            .navbar-nav > li:nth-child(4) > a { background-image: url('Images/guestbook.gif'); }
-            .navbar-nav > li:nth-child(5) > a { background-image: url('Images/gallery.gif'); }
-            .navbar-nav > li:nth-child(6) > a { background-image: url('Images/friends.gif'); }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav > li > a { width: 100%; display: block; height: 63px; text-indent: -9999px; background-repeat: no-repeat; }
+    .navbar-nav > li:nth-child(1) > a { background-image: url('Images/band.gif'); }
+    .navbar-nav > li:nth-child(2) > a { background-image: url('Images/news.gif'); background-position: 35px 10px; }
+    .navbar-nav > li:nth-child(3) > a { background-image: url('Images/gigs.gif'); }
+    .navbar-nav > li:nth-child(4) > a { background-image: url('Images/guestbook.gif'); }
+    .navbar-nav > li:nth-child(5) > a { background-image: url('Images/gallery.gif'); }
+    .navbar-nav > li:nth-child(6) > a { background-image: url('Images/friends.gif'); }
+
+    .navbar-nav > li:nth-child(1) > a:hover { background-image: url('Images/band2.gif'); }
+    .navbar-nav > li:nth-child(2) > a:hover { background-image: url('Images/news2.gif'); background-position: 35px 10px; }
+    .navbar-nav > li:nth-child(3) > a:hover { background-image: url('Images/gigs2.gif'); }
+    .navbar-nav > li:nth-child(4) > a:hover { background-image: url('Images/guestbook2.gif'); }
+    .navbar-nav > li:nth-child(5) > a:hover { background-image: url('Images/gallery2.gif'); }
+    .navbar-nav > li:nth-child(6) > a:hover { background-image: url('Images/friends2.gif'); }
 }

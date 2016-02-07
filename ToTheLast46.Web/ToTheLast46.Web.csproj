@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -191,6 +199,7 @@
     <Compile Include="Areas\Admin666\Models\ProfileEdit.cs" />
     <Compile Include="Areas\Admin666\Models\ProfileCreate.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +215,13 @@
     <Content Include="App_Data\contact.aspx.htm" />
     <Content Include="App_Data\david.htm" />
     <Content Include="App_Data\default.aspx.htm" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox_buttons.png" />
+    <Content Include="Content\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\fancybox\fancybox_sprite.png" />
     <Content Include="Content\Images\band.gif" />
     <Content Include="Content\Images\band2.gif" />
     <Content Include="Content\Images\burnt-edge.png" />
@@ -222,8 +238,18 @@
     <Content Include="Content\Images\Old Paper.jpg" />
     <Content Include="Content\Images\Paper-Collage-Texture-1.jpg" />
     <Content Include="Content\Images\to-the-last.gif" />
+    <Content Include="Content\jquery.fancybox-buttons.css" />
+    <Content Include="Content\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\Admin.css" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\jquery.fancybox-media.js" />
+    <Content Include="Scripts\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="SiteContent\Images\Band\profile_10.jpg" />
     <Content Include="SiteContent\Images\Band\profile_11.jpg" />
     <Content Include="SiteContent\Images\Band\profile_12.jpg" />
@@ -325,6 +351,8 @@
     <Content Include="Views\Home\Guestbook.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\Friends.cshtml" />
+    <Content Include="Views\Home\AddComment.cshtml" />
+    <Content Include="Views\Home\GalleryImages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ToTheLast.Model\ToTheLast.Model.csproj">
@@ -346,7 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin666\Views\Images2\" />
-    <Folder Include="Areas\Admin666\Views\Test\" />
     <Folder Include="SiteContent\Images\Gallery\" />
   </ItemGroup>
   <PropertyGroup>

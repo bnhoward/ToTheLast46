@@ -5,14 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ToTheLast46.Web.Models;
 
 namespace ToTheLast46.Web.Controllers
 {
     public class HomeController : Controller
     {
+        IGuestbookDAC _guestbookDAC;
+
+        public HomeController()
+        {
+            _guestbookDAC = new GuestbookDAC();
+        }
         public ActionResult Index()
         {
-            ViewBag.Content= System.IO.File.ReadAllText(Server.MapPath(@"~\App_Data\default.aspx.htm"));
+            ViewBag.Content = System.IO.File.ReadAllText(Server.MapPath(@"~\App_Data\default.aspx.htm"));
             return View();
         }
 
@@ -23,7 +30,7 @@ namespace ToTheLast46.Web.Controllers
             return View(profiles);
         }
 
-        public ActionResult Blog(int pageNo=1,int pageSize=6)
+        public ActionResult Blog(int pageNo = 1, int pageSize = 6)
         {
             INewsDAC dac = new NewsDAC();
             int totalNoRecords;
@@ -52,11 +59,38 @@ namespace ToTheLast46.Web.Controllers
             return View(guestbooks);
         }
 
+        public ActionResult AddComment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddComment(GuestbookComment comment)
+        {
+            if (!ModelState.IsValid)
+                return View(comment);
+
+            _guestbookDAC.Add(comment.Name, comment.Email, comment.Com);
+            TempData["Success"] = true;
+            return RedirectToAction("AddComment");
+
+        }
+
         public ActionResult Gallery()
         {
             IGalleryDAC dac = new GalleryDAC();
             IList<Gallery> galleries = dac.Get();
             return View(galleries);
+        }
+
+        public ActionResult GalleryImages(int id)
+        {
+            IGalleryDAC dac = new GalleryDAC();
+            Gallery gallery = dac.GetGallery(id);
+            ViewBag.GalleryTitle = gallery.Name;
+            IImageDAC imageDAC = new ImageDAC();
+            var images = imageDAC.Get(id);
+            return View(images);
         }
 
         public ActionResult Friends()

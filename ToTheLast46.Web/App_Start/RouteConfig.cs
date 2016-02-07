@@ -16,7 +16,9 @@ namespace ToTheLast46.Web
             routes.MapRoute(null, "blog", new { controller = "Home", action = "Blog" });
             routes.MapRoute(null, "gigs", new { controller = "Home", action = "Gigs" });
             routes.MapRoute(null, "guestbook", new { controller = "Home", action = "Guestbook" });
+            routes.MapRoute(null, "add-comment", new { controller = "Home", action = "AddComment" });
             routes.MapRoute(null, "gallery", new { controller = "Home", action = "Gallery" });
+            routes.MapRoute(null, "gallery-images", new { controller = "Home", action = "GalleryImages" });
             routes.MapRoute(null, "friends", new { controller = "Home", action = "Friends" });
             routes.MapRoute(null, "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }

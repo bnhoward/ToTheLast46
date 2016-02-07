@@ -9,28 +9,24 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.StartDateTime)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Venue)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartDateTime)
-        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Venue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDateTime)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDateTime)
+            </td>
+            <td>
+                <h4>@Html.DisplayFor(modelItem => item.Venue)</h4>
+                <p><em>@Html.DisplayFor(modelItem => item.Description)</em></p>
+            </td>
+        </tr>
+    }
 
 </table>

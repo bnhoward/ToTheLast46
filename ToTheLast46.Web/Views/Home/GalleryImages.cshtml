@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Nightjar.ToTheLast.Entities.Image>
+
+@{
+    ViewBag.Title = ViewBag.GalleryTitle;
+}
+
+@section styles{
+
+    <link href="~/Content/jquery.fancybox.css?v=2.1.5" rel="stylesheet" />
+}
+
+<h2>@ViewBag.GalleryTitle</h2>
+
+
+
+@foreach (var item in Model)
+{
+    <a class="fancybox" rel="group" href="~/SiteContent/Images/Gallery/@item.Filename">
+        <img src="~/SiteContent/Images/Gallery/@item.Filename" alt="@item.Title" style="max-height:100px; margin:5px;box-shadow: 1px 1px 7px #000;" />
+    </a>
+
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
+}
+
+

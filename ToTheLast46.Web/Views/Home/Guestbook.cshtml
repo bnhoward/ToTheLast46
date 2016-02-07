@@ -6,58 +6,29 @@
 
 <h2>Guestbook</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p style="float:right;">
+    @Html.ActionLink("Add Comment", "AddComment")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Reply)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Display)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reply)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Display)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GuestbookID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GuestbookID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GuestbookID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        if (item.Display)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                    <p style="margin-top:1em;color:lightslategrey"><em>@Html.DisplayFor(modelItem => item.Reply)</em></p>
+                </td>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+            </tr>
+        }
+    }
 
 </table>
