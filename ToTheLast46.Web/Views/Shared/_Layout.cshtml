@@ -34,12 +34,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("The Band", "Band", "Home")</li>
-                    <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
-                    <li>@Html.ActionLink("Gigs", "Gigs", "Home")</li>
-                    <li>@Html.ActionLink("Guestbook", "Guestbook", "Home")</li>
-                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-                    <li>@Html.ActionLink("Friends", "Friends", "Home")</li>
+                    <li>@Html.ActionLink("The Band", "Band", "Home", null, new { @class = "band" })</li>
+                    <li>@Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "news" })</li>
+                    <li>@Html.ActionLink("Gigs", "Gigs", "Home", null, new { @class = "gigs" })</li>
+                    <li>@Html.ActionLink("Guestbook", "Guestbook", "Home", null, new { @class = "guestbook" })</li>
+                    <li>@Html.ActionLink("Gallery", "Gallery", "Home", null, new { @class = "gallery" })</li>
+                    <li>@Html.ActionLink("Friends", "Friends", "Home", null, new { @class = "friends" })</li>
                 </ul>
             </div>
         </div>

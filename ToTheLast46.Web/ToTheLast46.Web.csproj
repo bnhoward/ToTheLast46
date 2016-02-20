@@ -236,6 +236,7 @@
     <Content Include="Content\Images\news2.gif" />
     <Content Include="Content\Images\Old Paper.jpg" />
     <Content Include="Content\Images\Paper-Collage-Texture-1.jpg" />
+    <Content Include="Content\Images\sprites.png" />
     <Content Include="Content\Images\to-the-last.gif" />
     <Content Include="Content\jquery.fancybox-buttons.css" />
     <Content Include="Content\jquery.fancybox-thumbs.css" />
