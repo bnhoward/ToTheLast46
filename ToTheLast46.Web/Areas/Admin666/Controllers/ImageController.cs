@@ -19,6 +19,7 @@ namespace ToTheLast46.Web.Areas.Admin666.Controllers
             var gallery = galleryDAC.GetGallery(galleryID);
             ViewBag.Gallery = gallery.Name;
             ViewBag.GalleryID = gallery.GalleryID;
+            ViewBag.DefaultImage = gallery.DisplayImage;
             var images = dac.Get(galleryID);
             return View(images);
         }
@@ -72,6 +73,14 @@ namespace ToTheLast46.Web.Areas.Admin666.Controllers
             IImageDAC dac = new ImageDAC();
             dac.Delete(id);
             return RedirectToAction("Index", new { galleryID = galleryID });
+        }
+
+        [HttpPost]
+        public ActionResult UpdateDefaultImage(int galleryID,string image)
+        {
+            IGalleryDAC galleryDAC = new GalleryDAC();
+            galleryDAC.SetDisplayImage(galleryID, image);
+            return Json(new { Success = true });
         }
     }
 }

@@ -103,5 +103,11 @@ namespace Nightjar.ToTheLast.DAL
 
             totalNoRecords = count;
         }
+
+        public void SetDisplayImage(int galleryID,string image)
+        {
+            var gallery = GetGallery(galleryID);
+            Update(galleryID, gallery.Name, gallery.Description, gallery.SortOrder, image);
+        }
     }
 }

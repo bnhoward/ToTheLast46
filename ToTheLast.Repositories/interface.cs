@@ -49,6 +49,7 @@ namespace Nightjar.ToTheLast.DAL
         Gallery GetGallery(int galleryID);
         void Add(string name, string description,int sortOrder);
         bool Update(int galleryID, string name, string description, int sortOrder, string displayImage);
+        void SetDisplayImage(int galleryID,string image);
         bool Delete(int galleryID);
     }
 
