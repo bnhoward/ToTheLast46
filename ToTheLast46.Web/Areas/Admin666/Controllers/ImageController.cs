@@ -8,7 +8,7 @@ using ToTheLast46.Web.Areas.Admin666.Models;
 
 namespace ToTheLast46.Web.Areas.Admin666.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ImageController : Controller
     {
         // GET: Admin666/Image
