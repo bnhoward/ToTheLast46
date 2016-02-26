@@ -1,0 +1,4 @@
+Remove galleries except first and last 2
+Allow users to uplad images!!
+YouTube link to be provided by RK
+Facebook link
